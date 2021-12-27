@@ -9,6 +9,9 @@ function getStudents() {
 }
 
 function appendStudents(students) {
+    let studentHolder = document.querySelector('#nameblock');
+    let studentList = document.createElement('ol');
+    studentList.type = '1';
     for (let student of students) {
         let studentObj = {
             id: student.id,
@@ -17,9 +20,9 @@ function appendStudents(students) {
         }
         let studentLine = document.createElement('li');
         studentLine.textContent = studentObj.name + ` ${studentObj.grade}th`;
-        let studentHolder = document.querySelector('#nameblock');
-        studentHolder.appendChild(studentLine);
+        studentList.appendChild(studentLine);
     }
+    studentHolder.appendChild(studentList);
 }
 
 
