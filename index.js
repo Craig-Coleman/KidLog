@@ -22,8 +22,9 @@ function appendStudents(students) {
         studentLine.textContent = studentObj.name + ` ${studentObj.grade}th`;
         studentLine.style.marginBottom = '5px';
         let deleteBtn = document.createElement('button');
-        deleteBtn.textContent = 'x';
+        deleteBtn.textContent = 'Remove';
         deleteBtn.style.marginLeft = '5px';
+        deleteBtn.addEventListener('click', (e) => e.target.parentNode.remove())
         studentLine.appendChild(deleteBtn);
         studentList.appendChild(studentLine);
     }
