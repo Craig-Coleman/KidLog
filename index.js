@@ -42,6 +42,7 @@ function addNewStudent(event) {
         grade: document.querySelector('#grade').value
     }]
     appendStudents(studentObj);
+    form.reset();
 }
 
 
