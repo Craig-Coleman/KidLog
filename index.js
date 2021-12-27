@@ -13,13 +13,8 @@ function appendStudents(students) {
     let studentList = document.createElement('ol');
     studentList.type = '1';
     for (let student of students) {
-        let studentObj = {
-            id: student.id,
-            name: student.last + ', ' + student.first,
-            grade: student.grade
-        }
         let studentLine = document.createElement('li');
-        studentLine.textContent = studentObj.name + ` (${studentObj.grade}th)`;
+        studentLine.textContent = student.last + ', ' + student.first + ` (${student.grade}th)`;
         studentLine.style.marginBottom = '5px';
         let deleteBtn = document.createElement('button');
         deleteBtn.textContent = 'Remove';
