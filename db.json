@@ -22,13 +22,13 @@
       "id": 4,
       "first": "Sarah",
       "last": "Schell",
-      "name": 9
+      "grade": 9
     },
     {
       "id": 5,
       "first": "Chaney",
       "last": "Sheffield",
-      "name": 9
+      "grade": 9
     },
     {
       "id": 6,
@@ -46,7 +46,7 @@
       "id": 8,
       "first": "Annie",
       "last": "Gravatt",
-      "name": 10
+      "grade": 10
     },
     {
       "id": 9,
