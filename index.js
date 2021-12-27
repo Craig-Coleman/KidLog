@@ -20,10 +20,31 @@ function appendStudents(students) {
         let studentLine = document.createElement('li');
         studentLine.textContent = student.last + ', ' + student.first + ` (${student.grade}th)`;
         studentLine.style.marginBottom = '5px';
+
+        //Create DropDown Menu
+        let dropDown = document.createElement('select');
+        let present = document.createElement('option');
+        present.value = 'present';
+        present.textContent = 'Present';
+        let tardy = document.createElement('option');
+        tardy.value = 'tardy';
+        tardy.textContent = 'Tardy'
+        let absent = document.createElement('option');
+        absent.value = 'absent';
+        absent.textContent = 'Absent';
+        dropDown.appendChild(present);
+        dropDown.appendChild(tardy);
+        dropDown.appendChild(absent);
+        dropDown.style.marginLeft = '10px';
+
+        //Create Delete Button
         let deleteBtn = document.createElement('button');
         deleteBtn.textContent = 'Remove';
         deleteBtn.style.marginLeft = '5px';
         deleteBtn.addEventListener('click', (e) => e.target.parentNode.remove())
+        
+        //Append it all
+        studentLine.appendChild(dropDown);
         studentLine.appendChild(deleteBtn);
         studentList.appendChild(studentLine);
     }
@@ -44,7 +65,5 @@ function addNewStudent(event) {
     appendStudents(studentObj);
     form.reset();
 }
-
-
 
 })
