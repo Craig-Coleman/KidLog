@@ -20,6 +20,11 @@ function appendStudents(students) {
         }
         let studentLine = document.createElement('li');
         studentLine.textContent = studentObj.name + ` ${studentObj.grade}th`;
+        studentLine.style.marginBottom = '5px';
+        let deleteBtn = document.createElement('button');
+        deleteBtn.textContent = 'x';
+        deleteBtn.style.marginLeft = '5px';
+        studentLine.appendChild(deleteBtn);
         studentList.appendChild(studentLine);
     }
     studentHolder.appendChild(studentList);
