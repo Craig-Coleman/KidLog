@@ -20,6 +20,14 @@ function appendStudent(student) {
         deleteBtn.textContent = 'Remove';
         deleteBtn.style.marginLeft = '5px';
         deleteBtn.addEventListener('click', (e) => e.target.parentNode.remove())
+        deleteBtn.addEventListener('click', function() {
+            fetch(`http://localhost:3000/students/${student.id}`, {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+        })
         studentLine.appendChild(deleteBtn);
         studentList.appendChild(studentLine);
     }
