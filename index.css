@@ -51,7 +51,6 @@ body {
     color: #e04b52;
   }
   
-  
   .remove {
     position: relative;
     background-color: #e04b52;
@@ -65,11 +64,7 @@ body {
     margin: 3px;
   }
   
-  .submit:hover {
-    background-color: whitesmoke;
-    border: #e04b52 solid 1px;
-    color: #e04b52;
-  }
+
   
   
 

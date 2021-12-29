@@ -13,3 +13,8 @@ In order for this app to function correctly, JSON server must be installed.  Dir
 json-server --watch db.json 
 ```
 into your terminal to activate the server.
+  
+## Acknowldegements
+Images used for initial student cards were taken from [this](https://www.gettyimages.com/photos/yearbook-photo?assettype=image&sort=mostpopular&phrase=yearbook%20photo&license=rf%2Crm) webpage.
+  
+The CSS information was borrowed from the FlatIron "Toy-Tale" lab and altered.
