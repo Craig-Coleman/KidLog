@@ -11,9 +11,10 @@ body {
     padding: 1rem;
   }
   
-
-  
-
+  #roster_title {
+    text-align: center;
+    text-decoration: underline;
+  }
   
   .card {
     text-align: center;
