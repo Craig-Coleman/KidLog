@@ -2,14 +2,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 const studentHolder = document.querySelector('#student_container');
 
-
 function getStudents() {
     fetch('http://localhost:3000/students')
     .then(res => res.json())
     .then(students => students.forEach(appendStudent))
 }
 getStudents();
-
 
 function appendStudent(student) {
         const card = document.createElement('div');
@@ -40,7 +38,6 @@ function appendStudent(student) {
         studentHolder.appendChild(card);
     }
 
-
 const form = document.querySelector('#form');
 form.addEventListener('submit', addNewStudent);
 function addNewStudent(event) {
@@ -61,5 +58,4 @@ function addNewStudent(event) {
     })
     form.reset();
 }
-
 })
