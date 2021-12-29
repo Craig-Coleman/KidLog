@@ -24,7 +24,6 @@ function appendStudent(student) {
         const deleteBtn = document.createElement('button');
         deleteBtn.setAttribute('class', 'remove');
         deleteBtn.textContent = 'Remove';
-        deleteBtn.style.marginLeft = '5px';
         deleteBtn.addEventListener('click', (e) => e.target.parentNode.remove())
         deleteBtn.addEventListener('click', function() {
             fetch(`http://localhost:3000/students/${student.id}`, {
