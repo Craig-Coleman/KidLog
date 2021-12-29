@@ -52,7 +52,6 @@ function addNewStudent(event) {
         grade: document.querySelector('#grade').value,
         image: document.querySelector('#image').value
     };
-    console.log(studentObj)
     appendStudent(studentObj);
     fetch('http://localhost:3000/students', {
         method: 'POST',
@@ -61,8 +60,6 @@ function addNewStudent(event) {
         },
         body: JSON.stringify(studentObj)
     })
-    .then(res => res.json())
-    .then(data => console.log(data))
     form.reset();
 }
 
