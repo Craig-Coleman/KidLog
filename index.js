@@ -1,68 +1,43 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-let studentHolder = document.querySelector('#nameblock');
-let studentList = document.createElement('ol');
-studentList.type = '1';
+const studentHolder = document.querySelector('#nameblock');
+const studentList = document.createElement('ol');
 
 
-//Fetch Student Roster from API
-document.addEventListener('DOMContentLoaded', getStudents())
+
 function getStudents() {
     fetch('http://localhost:3000/students')
     .then(res => res.json())
-    .then(students => appendStudents(students))
+    .then(students => students.forEach(appendStudent))
 }
+getStudents();
 
 
-//Append Students to List in DOM
-function appendStudents(students) {
-    for (let student of students) {
-        let studentLine = document.createElement('li');
+function appendStudent(student) {
+        const studentLine = document.createElement('li');
         studentLine.textContent = student.last + ', ' + student.first + ` (${student.grade}th)`;
         studentLine.style.marginBottom = '5px';
-
-        //Create DropDown Menu
-        let dropDown = document.createElement('select');
-        let present = document.createElement('option');
-        present.value = 'present';
-        present.textContent = 'Present';
-        let tardy = document.createElement('option');
-        tardy.value = 'tardy';
-        tardy.textContent = 'Tardy'
-        let absent = document.createElement('option');
-        absent.value = 'absent';
-        absent.textContent = 'Absent';
-        dropDown.appendChild(present);
-        dropDown.appendChild(tardy);
-        dropDown.appendChild(absent);
-        dropDown.style.marginLeft = '10px';
-
-        //Create Delete Button
-        let deleteBtn = document.createElement('button');
+        const deleteBtn = document.createElement('button');
         deleteBtn.textContent = 'Remove';
         deleteBtn.style.marginLeft = '5px';
         deleteBtn.addEventListener('click', (e) => e.target.parentNode.remove())
-        
-        //Append it all
-        studentLine.appendChild(dropDown);
         studentLine.appendChild(deleteBtn);
         studentList.appendChild(studentLine);
     }
     studentHolder.appendChild(studentList);
-}
 
 
-//Give Functionality to Add Student Form
-let form = document.querySelector('#form');
+
+const form = document.querySelector('#form');
 form.addEventListener('submit', addNewStudent);
 function addNewStudent(event) {
     event.preventDefault();
-    let studentObj = [{
+    const studentObj = {
         first: document.querySelector('#firstname').value,
         last: document.querySelector('#lastname').value,
         grade: document.querySelector('#grade').value
-    }]
-    appendStudents(studentObj);
+    };
+    appendStudent(studentObj);
     form.reset();
 }
 
