@@ -17,7 +17,7 @@ function appendStudent(student) {
         const name = document.createElement('h2');
         name.textContent = `${student.last}` + ' ' + `${student.first}`;
         const img = document.createElement('img');
-        img.setAttribute('class', 'image');
+        img.setAttribute('class', 'student_image');
         img.setAttribute('src', student.image)
         const grade = document.createElement('p');
         grade.textContent = `${student.grade}th grade`;
