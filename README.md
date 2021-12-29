@@ -1,4 +1,4 @@
-# Basic Attendance Taker
+# Basic Classroom Roster
 An app to allow classroom teachers to alter their student roster.
 
 ## Description
