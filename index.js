@@ -15,7 +15,7 @@ function appendStudent(student) {
         const card = document.createElement('div');
         card.setAttribute('class', 'card');
         const name = document.createElement('h2');
-        name.textContent = `${student.last}` + ' ' + `${student.first}`;
+        name.textContent = `${student.last}` + ', ' + `${student.first}`;
         const img = document.createElement('img');
         img.setAttribute('class', 'student_image');
         img.setAttribute('src', student.image)
