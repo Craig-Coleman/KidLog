@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-const studentHolder = document.querySelector('#nameblock');
-const studentList = document.createElement('ol');
+const studentHolder = document.querySelector('#student_container');
 
 
 function getStudents() {
@@ -13,10 +12,16 @@ getStudents();
 
 
 function appendStudent(student) {
-        const studentLine = document.createElement('li');
-        studentLine.textContent = student.last + ', ' + student.first + ` (${student.grade}th)`;
-        studentLine.style.marginBottom = '5px';
+        const card = document.createElement('div');
+        card.setAttribute('class', 'card');
+        const name = document.createElement('h2');
+        name.textContent = `${student.last}` + ' ' + `${student.first}`;
+        const img = document.createElement('img');
+        img.setAttribute('class', 'image');
+        const grade = document.createElement('p');
+        grade.textContent = `${student.grade}th grade`;
         const deleteBtn = document.createElement('button');
+        deleteBtn.setAttribute('class', 'remove');
         deleteBtn.textContent = 'Remove';
         deleteBtn.style.marginLeft = '5px';
         deleteBtn.addEventListener('click', (e) => e.target.parentNode.remove())
@@ -28,10 +33,12 @@ function appendStudent(student) {
                 }
             })
         })
-        studentLine.appendChild(deleteBtn);
-        studentList.appendChild(studentLine);
+        card.appendChild(name);
+        card.appendChild(img);
+        card.appendChild(grade);
+        card.appendChild(deleteBtn);
+        studentHolder.appendChild(card);
     }
-    studentHolder.appendChild(studentList);
 
 
 const form = document.querySelector('#form');
