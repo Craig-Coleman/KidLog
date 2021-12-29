@@ -49,8 +49,10 @@ function addNewStudent(event) {
     const studentObj = {
         first: document.querySelector('#firstname').value,
         last: document.querySelector('#lastname').value,
-        grade: document.querySelector('#grade').value
+        grade: document.querySelector('#grade').value,
+        image: document.querySelector('#image').value
     };
+    console.log(studentObj)
     appendStudent(studentObj);
     fetch('http://localhost:3000/students', {
         method: 'POST',
