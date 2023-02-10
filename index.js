@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
 const studentHolder = document.querySelector('#student_container');
 
 function getStudents() {
-    fetch('http://localhost:3000/students')
+    fetch('https://demo-json.onrender.com//students')
     .then(res => res.json())
     .then(students => students.forEach(appendStudent))
 }
@@ -24,7 +24,7 @@ function appendStudent(student) {
         deleteBtn.textContent = 'Remove';
         deleteBtn.addEventListener('click', (e) => e.target.parentNode.remove())
         deleteBtn.addEventListener('click', function() {
-            fetch(`http://localhost:3000/students/${student.id}`, {
+            fetch(`https://demo-json.onrender.com//students/${student.id}`, {
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json'
@@ -49,7 +49,7 @@ function addNewStudent(event) {
         image: document.querySelector('#image').value
     };
     appendStudent(studentObj);
-    fetch('http://localhost:3000/students', {
+    fetch('https://demo-json.onrender.com//students', {
         method: 'POST',
         headers:{
             'Content-Type': 'application/json'
